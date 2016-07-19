@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet var playerNumber : UITextField!
-    
+    @IBOutlet var bVal : UIButton!
     
 }
 
