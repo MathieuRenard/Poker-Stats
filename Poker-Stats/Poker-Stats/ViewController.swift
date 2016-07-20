@@ -32,7 +32,21 @@ class ViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
-
+    // fonction pour afficher le boutton 
+    @IBAction func playerNumber(sender : UITextField){
+    
+        if buttonValidation.hidden{
+            
+            let myInt = Int(sender.text!)
+            if myInt < 7 && myInt > 1 {
+                buttonValidation.hidden = false
+               
+            }
+        }
+        
+        
+        
+    }
 
 
 }
