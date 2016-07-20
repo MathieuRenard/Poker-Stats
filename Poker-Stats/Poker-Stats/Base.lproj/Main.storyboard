@@ -33,13 +33,13 @@
                                 <rect key="frame" x="318" y="149" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="showbutton:" destination="BYZ-38-t0r" eventType="editingChanged" id="oWE-DR-L8K"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D3-Ed-Pa4">
                                 <rect key="frame" x="254" y="372" width="47" height="30"/>
                                 <state key="normal" title="Valider"/>
-                                <connections>
-                                    <action selector="showbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zns-yC-a9o"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
