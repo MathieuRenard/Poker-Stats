@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonValidation.hidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -30,12 +31,6 @@ class ViewController: UIViewController {
         alert.addAction(ok)
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
-    
-    
-
-    
-
 
 
 
