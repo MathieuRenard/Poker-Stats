@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var playerNumber : UITextField!
+    @IBOutlet var bVal : UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,8 +33,7 @@ class ViewController: UIViewController {
     
     
     
-    @IBOutlet var playerNumber : UITextField!
-    @IBOutlet var bVal : UIButton!
+
     
 
 
