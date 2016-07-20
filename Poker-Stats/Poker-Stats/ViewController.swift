@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var playerNumber : UITextField!
-    @IBOutlet var buttonValidation : UIButton!
+    @IBOutlet var validationButton : UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonValidation.hidden = true
+        validationButton.hidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,19 +35,19 @@ class ViewController: UIViewController {
     // fonction pour afficher le boutton 
     @IBAction func playerNumber(sender : UITextField){
     
-        if buttonValidation.hidden{
+        if validationButton.hidden{
             
             let myInt = Int(sender.text!)
             if myInt < 7 && myInt > 1 {
-                buttonValidation.hidden = false
-               
-            }
+                validationButton.hidden = false
+            }else{
+                alert ("Erreur", message: " veuillez rentrer un chiffre compris entre 1 et 7 ")
+                
+                  }
         }
-        
-        
+ 
         
     }
-
 
 }
 
