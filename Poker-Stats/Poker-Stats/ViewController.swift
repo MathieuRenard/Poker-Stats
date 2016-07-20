@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 
-    // fonction pour afficher le boutton ( je pense que je vais mettre une autre boucle que if pour qu elle se répéte tant quil n a pas mis le bon truc )
+    // fonction pour afficher le boutton
     @IBAction func showbutton (sender : UITextField) {
         let playerNumber = Int(sender.text!)
         if playerNumber < 7 && playerNumber > 1 {
