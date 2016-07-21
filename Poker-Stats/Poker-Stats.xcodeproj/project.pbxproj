@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4276805D1D40D2D0008524E9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4276805C1D40D2D0008524E9 /* Card.swift */; };
 		42E5CEEB1D3D93B9004AEF51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5CEEA1D3D93B9004AEF51 /* AppDelegate.swift */; };
 		42E5CEED1D3D93B9004AEF51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5CEEC1D3D93B9004AEF51 /* ViewController.swift */; };
 		42E5CEF01D3D93B9004AEF51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E5CEEE1D3D93B9004AEF51 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4276805C1D40D2D0008524E9 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		42E5CEE71D3D93B9004AEF51 /* Poker-Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poker-Stats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E5CEEA1D3D93B9004AEF51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42E5CEEC1D3D93B9004AEF51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				42E5CEEA1D3D93B9004AEF51 /* AppDelegate.swift */,
 				42E5CEEC1D3D93B9004AEF51 /* ViewController.swift */,
+				4276805C1D40D2D0008524E9 /* Card.swift */,
 				42E5CEEE1D3D93B9004AEF51 /* Main.storyboard */,
 				42E5CEF11D3D93B9004AEF51 /* Assets.xcassets */,
 				42E5CEF31D3D93B9004AEF51 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E5CEED1D3D93B9004AEF51 /* ViewController.swift in Sources */,
+				4276805D1D40D2D0008524E9 /* Card.swift in Sources */,
 				42E5CEEB1D3D93B9004AEF51 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +488,7 @@
 				42E5CF111D3D93B9004AEF51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42E5CF121D3D93B9004AEF51 /* Build configuration list for PBXNativeTarget "Poker-StatsTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				42E5CF141D3D93B9004AEF51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42E5CF151D3D93B9004AEF51 /* Build configuration list for PBXNativeTarget "Poker-StatsUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				42E5CF171D3D93B9004AEF51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
