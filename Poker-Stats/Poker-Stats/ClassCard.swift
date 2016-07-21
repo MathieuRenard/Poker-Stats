@@ -26,3 +26,14 @@ struct Card : CustomStringConvertible {
     return "Card:\(value)-\(suit)"
     }
 }
+
+
+// structure d'un Flop/Turn/River
+struct Board   {
+    var flop1 : Card
+    var flop2 : Card
+    var flop3 : Card
+    var turn : Card
+    var river : Card
+    
+}
