@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var playerNumber : UITextField!
     @IBOutlet var validationButton : UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,5 +46,8 @@ class ViewController: UIViewController {
         }
       
     }
+    
+    
+    
 }
 
