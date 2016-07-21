@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import UIKit
+
+
+enum Suit {
+    case Spade
+    case Heart
+    case Diamond
+    case Club
+}
+
+
