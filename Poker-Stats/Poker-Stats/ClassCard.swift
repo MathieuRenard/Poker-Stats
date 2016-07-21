@@ -37,3 +37,10 @@ struct Board   {
     var river : Card
     
 }
+
+
+//structure player
+struct Player {
+    var card1 : Card
+    var card2 : Card
+}
