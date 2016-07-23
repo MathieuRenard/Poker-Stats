@@ -30,17 +30,17 @@ struct Card : CustomStringConvertible {
 
 // structure d'un Flop/Turn/River
 struct Board   {
-    var flop1 : Card
-    var flop2 : Card
-    var flop3 : Card
-    var turn : Card
-    var river : Card
+    var flop1 : Card?
+    var flop2 : Card?
+    var flop3 : Card?
+    var turn : Card?
+    var river : Card?
     
 }
 
 
 //structure player
 struct Player {
-    var card1 : Card
-    var card2 : Card
+    var card1 : Card?
+    var card2 : Card?
 }
