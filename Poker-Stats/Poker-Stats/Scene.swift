@@ -8,14 +8,43 @@
 import Foundation
 import UIKit
 
-internal class Scene : UIViewController{
+internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewDelegate {
     
-    @IBOutlet var playerCard : UITextField!
+    @IBOutlet weak var piker: UIPickerView!
+    var pickerVal : [String]!
+    var pickerSuit : [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        pickerVal = ["As", "2","3","4","5","6","7","8","9","10","J","Q","K"]
+        pickerSuit = ["Spade","Heart","Diamond","Club"]
     }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+    {
+    return 2
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+    
+        if(component == 0){
+        return pickerSuit.count
+        }
+        return pickerVal.count
+    }
+
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+   
+        if(component == 0){
+            return pickerSuit[row]
+        }
+        return pickerVal[row]
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

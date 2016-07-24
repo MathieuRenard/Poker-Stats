@@ -35,7 +35,6 @@ struct Board   {
     var flop3 : Card?
     var turn : Card?
     var river : Card?
-    
 }
 
 
