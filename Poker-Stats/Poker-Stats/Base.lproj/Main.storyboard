@@ -88,10 +88,15 @@
                                     <outlet property="delegate" destination="SFb-ek-v9N" id="2DA-VT-osp"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcZ-hd-AIg">
+                                <rect key="frame" x="139" y="113" width="36" height="30"/>
+                                <state key="normal" title="carte"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="cardButton" destination="HcZ-hd-AIg" id="WeL-jv-zIq"/>
                         <outlet property="picker" destination="SQl-xG-HIj" id="TWb-Jd-i28"/>
                     </connections>
                 </viewController>
