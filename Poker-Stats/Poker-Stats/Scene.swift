@@ -10,14 +10,15 @@ import UIKit
 
 internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewDelegate {
     
-    @IBOutlet weak var piker: UIPickerView!
+
+    @IBOutlet weak var picker: UIPickerView!
+
     var pickerVal : [String]!
     var pickerSuit : [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+       
         pickerVal = ["As", "2","3","4","5","6","7","8","9","10","J","Q","K"]
         pickerSuit = ["Spade","Heart","Diamond","Club"]
     }
@@ -45,12 +46,14 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         return pickerVal[row]
     }
     
-    //fonction pour récupérer les données du pickerview ( a coder )
+    /*fonction pour récupérer les données du pickerview ( a coder )
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         // use the row to get the selected row from the picker view
         // using the row extract the value from your datasource (array[row])
     }
+    
+   */
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
