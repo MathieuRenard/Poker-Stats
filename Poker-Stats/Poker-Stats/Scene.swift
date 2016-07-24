@@ -45,12 +45,17 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         return pickerVal[row]
     }
     
+    //fonction pour récupérer les données du pickerview ( a coder )
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        // use the row to get the selected row from the picker view
+        // using the row extract the value from your datasource (array[row])
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     
