@@ -26,7 +26,8 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
     
     @IBAction func showPickerView ( sender : UIButton )
     {
-    
+        picker.hidden = false
+     
     }
     
     
