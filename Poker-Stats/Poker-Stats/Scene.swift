@@ -13,9 +13,11 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
 
     @IBOutlet weak var cardButton: UIButton!
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var card1: UIImageView!
 
     var pickerVal : [String]!
     var pickerSuit : [String]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
     @IBAction func showPickerView ( sender : UIButton )
     {
         picker.hidden = false
-     
+        
     }
     
     
@@ -55,6 +57,15 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         }
         return pickerVal[row]
     }
+    
+  /*  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+     
+        var itemFirst = pickerVal[row]
+        var itemSecond = pickerSuit[row]
+    
+    }*/
+
+
     
     
     override func didReceiveMemoryWarning() {
