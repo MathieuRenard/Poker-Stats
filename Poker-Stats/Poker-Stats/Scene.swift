@@ -58,12 +58,16 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         return pickerVal[row]
     }
     
-  /*  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-     
-        var itemFirst = pickerVal[row]
-        var itemSecond = pickerSuit[row]
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
     
-    }*/
+                let suit = pickerView.selectedRowInComponent(0)
+                let value = pickerView.selectedRowInComponent(1) + 1
+                let selectedCard = Card(value: value, suit: Suit(rawValue: suit)!)
+                card1.image = selectedCard.image
+
+        
+    
+    }// end of did select
 
 
     
