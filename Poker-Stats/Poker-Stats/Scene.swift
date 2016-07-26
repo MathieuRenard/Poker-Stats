@@ -10,10 +10,17 @@ import UIKit
 
 internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewDelegate {
     
-
+    //Cache le clavier lorsque l'utilisateur touche l'écran
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @IBOutlet weak var validationPicker: UIButton!
     @IBOutlet weak var cardButton: UIButton!
+    @IBOutlet weak var cardButton2: UIButton!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var card1: UIImageView!
+    @IBOutlet weak var card2: UIImageView!
 
     var pickerVal : [String]!
     var pickerSuit : [String]!
@@ -24,6 +31,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         picker.hidden = true
         pickerVal = ["As", "2","3","4","5","6","7","8","9","10","J","Q","K"]
         pickerSuit = ["Spade","Heart","Diamond","Club"]
+        validationPicker.hidden = true 
     }
     
     @IBAction func showPickerView ( sender : UIButton )
@@ -64,11 +72,15 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
                 let value = pickerView.selectedRowInComponent(1) + 1
                 let selectedCard = Card(value: value, suit: Suit(rawValue: suit)!)
                 card1.image = selectedCard.image
-
+                validationPicker.hidden = false
         
-    
     }// end of did select
-
+    
+    @IBAction func hidePickerView(sender : UIButton )
+    {
+    picker.hidden = true
+    validationPicker.hidden = true
+    }
 
     
     

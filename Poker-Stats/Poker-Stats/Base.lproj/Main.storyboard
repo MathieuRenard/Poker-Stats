@@ -82,7 +82,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcZ-hd-AIg">
-                                <rect key="frame" x="139" y="113" width="36" height="30"/>
+                                <rect key="frame" x="26" y="152" width="36" height="30"/>
                                 <state key="normal" title="carte"/>
                                 <connections>
                                     <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="dXc-Uf-DKE"/>
@@ -98,13 +98,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0g-91-YJi">
                                 <rect key="frame" x="28" y="145" width="32" height="44"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l08-wA-JGn">
+                                <rect key="frame" x="134" y="159" width="47" height="30"/>
+                                <state key="normal" title="Valider"/>
+                                <connections>
+                                    <action selector="hidePickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="dG4-oD-ZpW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kng-rK-4Oi">
+                                <rect key="frame" x="76" y="145" width="33" height="44"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2D-LU-GiX">
+                                <rect key="frame" x="76" y="149" width="31" height="36"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="card1" destination="g0g-91-YJi" id="8Ad-oF-6Pw"/>
+                        <outlet property="card2" destination="kng-rK-4Oi" id="oV4-XQ-a62"/>
                         <outlet property="cardButton" destination="HcZ-hd-AIg" id="WeL-jv-zIq"/>
+                        <outlet property="cardButton2" destination="C2D-LU-GiX" id="RG1-uq-9rV"/>
                         <outlet property="picker" destination="SQl-xG-HIj" id="TWb-Jd-i28"/>
+                        <outlet property="validationPicker" destination="l08-wA-JGn" id="4Le-lA-yBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvH-uv-NB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
