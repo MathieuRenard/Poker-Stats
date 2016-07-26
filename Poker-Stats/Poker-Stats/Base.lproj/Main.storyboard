@@ -96,7 +96,7 @@
                                 </connections>
                             </pickerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0g-91-YJi">
-                                <rect key="frame" x="28" y="170" width="75" height="99"/>
+                                <rect key="frame" x="28" y="145" width="32" height="44"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
