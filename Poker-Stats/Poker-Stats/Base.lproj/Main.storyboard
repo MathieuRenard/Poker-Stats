@@ -95,9 +95,6 @@
                                     <outlet property="delegate" destination="SFb-ek-v9N" id="2DA-VT-osp"/>
                                 </connections>
                             </pickerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0g-91-YJi">
-                                <rect key="frame" x="28" y="145" width="32" height="44"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l08-wA-JGn">
                                 <rect key="frame" x="134" y="159" width="47" height="30"/>
                                 <state key="normal" title="Valider"/>
@@ -111,7 +108,13 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2D-LU-GiX">
                                 <rect key="frame" x="76" y="149" width="31" height="36"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="sYV-Qb-CGk"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0g-91-YJi">
+                                <rect key="frame" x="28" y="145" width="32" height="44"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

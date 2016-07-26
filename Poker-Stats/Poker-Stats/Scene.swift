@@ -66,15 +66,26 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         return pickerVal[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+    func pickerView(/*sender: UIButton, */pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
     
                 let suit = pickerView.selectedRowInComponent(0)
                 let value = pickerView.selectedRowInComponent(1) + 1
                 let selectedCard = Card(value: value, suit: Suit(rawValue: suit)!)
+        
+      /*  switch sender {
+        case cardButton : card1.image = selectedCard.image
+        case cardButton2 : card2.image = selectedCard.image
+        default : ()
+        }*/
+        
+        
+        
+        
                 card1.image = selectedCard.image
                 validationPicker.hidden = false
-        
     }// end of did select
+    
+
     
     @IBAction func hidePickerView(sender : UIButton )
     {
