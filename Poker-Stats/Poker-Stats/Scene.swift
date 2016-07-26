@@ -21,6 +21,9 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var card1: UIImageView!
     @IBOutlet weak var card2: UIImageView!
+    var selectedCard : Card?
+    var board = Board()
+    
 
     var pickerVal : [String]!
     var pickerSuit : [String]!
@@ -31,13 +34,27 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         picker.hidden = true
         pickerVal = ["As", "2","3","4","5","6","7","8","9","10","J","Q","K"]
         pickerSuit = ["Spade","Heart","Diamond","Club"]
-        validationPicker.hidden = true 
+        validationPicker.hidden = true
+        board.players = [Player()]
     }
     
     @IBAction func showPickerView ( sender : UIButton )
     {
         picker.hidden = false
+        if let player = board.players?.first{
         
+            switch sender {
+            case cardButton : selectedCard = player.card1
+                break
+            case cardButton2 : selectedCard = player.card2
+                break
+                
+            default :
+                break
+            }
+        }
+        
+    
     }
     
     
@@ -66,26 +83,18 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         return pickerVal[row]
     }
     
-    func pickerView(/*sender: UIButton, */pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+    func pickerView( pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
     
+
                 let suit = pickerView.selectedRowInComponent(0)
                 let value = pickerView.selectedRowInComponent(1) + 1
-                let selectedCard = Card(value: value, suit: Suit(rawValue: suit)!)
-        
-      /*  switch sender {
-        case cardButton : card1.image = selectedCard.image
-        case cardButton2 : card2.image = selectedCard.image
-        default : ()
-        }*/
+                selectedCard = Card(value: value, suit: Suit(rawValue: suit)!)
         
         
-        
-        
-                card1.image = selectedCard.image
+                card1.image = selectedCard?.image
                 validationPicker.hidden = false
     }// end of did select
     
-
     
     @IBAction func hidePickerView(sender : UIButton )
     {
