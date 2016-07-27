@@ -22,6 +22,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
     @IBOutlet weak var card1: UIImageView!
     @IBOutlet weak var card2: UIImageView!
     var selectedCard : Card?
+    var selectedImageView : Int?
     var board = Board()
     
 
@@ -44,9 +45,9 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         if let player = board.players?.first{
         
             switch sender {
-            case cardButton : selectedCard = player.card1
+            case cardButton : selectedImageView = 1
                 break
-            case cardButton2 : selectedCard = player.card2
+            case cardButton2 : selectedImageView = 2
                 break
                 
             default :
@@ -90,10 +91,43 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
                 let value = pickerView.selectedRowInComponent(1) + 1
                 selectedCard = Card(value: value, suit: Suit(rawValue: suit)!)
         
+        /*if let imageView = imageViewForCard(selectedCard!){
         
-                card1.image = selectedCard?.image
+        imageView.image = selectedCard!.image
+         
+        }*/
+        
+        if selectedImageView == 1 {
+            card1.image = selectedCard!.image
+            
+        }else if selectedImageView == 2 {
+        
+            card2.image = selectedCard!.image
+        }
+        
                 validationPicker.hidden = false
     }// end of did select
+    
+   
+    // permet de savoir quel bouton a été appuyé
+    func imageViewForCard ( card : Card ) -> UIImageView?{
+        
+        if let player = board.players?.first{
+           
+            if let card1 = player.card1 where card1 == card {
+                return self.card1
+            
+            }else if let card2 = player.card2 where card2 == card{
+            return self.card2
+            
+            }
+          }
+        return nil
+        }
+    
+    
+    
+    
     
     
     @IBAction func hidePickerView(sender : UIButton )

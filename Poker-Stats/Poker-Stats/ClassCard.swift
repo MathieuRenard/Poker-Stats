@@ -18,18 +18,25 @@ enum Suit : Int  {
 }
 
 // structure d'une Card
-struct Card : CustomStringConvertible {
+class Card : NSObject {
     var value : Int
     var suit : Suit
     
-    var image : UIImage?{
+    required init(value: Int, suit: Suit) {
+                self.value = value
+                self.suit = suit
+                super.init()
+    }
     
+    override var description: String {
+        return "Card:\(value)-\(suit)"
+    }
+    
+    var image : UIImage?{
         return UIImage(named: String(format: "%i_%i", value, suit.rawValue))
     }
     
-    var description: String{
-    return "Card:\(value)-\(suit)"
-    }
+
 }
 
 
