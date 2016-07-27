@@ -42,7 +42,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
     @IBAction func showPickerView ( sender : UIButton )
     {
         picker.hidden = false
-        if let player = board.players?.first{
+       // if let player = board.players?.first{
         
             switch sender {
             case cardButton : selectedImageView = 1
@@ -53,7 +53,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
             default :
                 break
             }
-        }
+       // }
         
     
     }
