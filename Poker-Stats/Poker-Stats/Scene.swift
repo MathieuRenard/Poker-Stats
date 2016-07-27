@@ -128,6 +128,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
     
    
     // permet de savoir quel bouton a été appuyé
+    // a update pour 2eme joueurs 
     func imageViewForCard ( card : Card ) -> UIImageView?{
         
         if let player = board.players?.first{

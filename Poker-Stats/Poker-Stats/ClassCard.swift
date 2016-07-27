@@ -39,11 +39,16 @@ class Card : NSObject {
 
 }
 
+//structure player
+struct Player {
+    var card1 : Card?
+    var card2 : Card?
+}
 
 // structure d'un Flop/Turn/River
 struct Board   {
    
-    var players: [Player]?
+    var players = [Player]() //tableau du nombre de joueur avec leur carte 
     var flop1 : Card?
     var flop2 : Card?
     var flop3 : Card?
@@ -52,8 +57,3 @@ struct Board   {
 }
 
 
-//structure player
-struct Player {
-    var card1 : Card?
-    var card2 : Card?
-}

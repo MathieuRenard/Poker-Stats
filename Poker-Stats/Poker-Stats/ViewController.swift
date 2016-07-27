@@ -38,6 +38,11 @@ class ViewController: UIViewController {
         let playerNumber = Int(sender.text!)
         if playerNumber < 7 && playerNumber > 1 {
                 validationButton.hidden = false
+          
+            /*for var count in 1 ... playerNumber{
+            // tentative de création du tableau de joueur
+            }*/
+            
         } else if sender.text == ""{
              validationButton.hidden = true
         } else {
