@@ -16,11 +16,19 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
     }
     
     @IBOutlet weak var validationPicker: UIButton!
+    
     @IBOutlet weak var cardButton: UIButton!
     @IBOutlet weak var cardButton2: UIButton!
+    @IBOutlet weak var cardButton1Player2: UIButton!
+    @IBOutlet weak var cardButton2Player2: UIButton!
+    
     @IBOutlet weak var picker: UIPickerView!
+   
     @IBOutlet weak var card1: UIImageView!
     @IBOutlet weak var card2: UIImageView!
+    @IBOutlet weak var card3: UIImageView!
+    @IBOutlet weak var card4: UIImageView!
+    
     var selectedCard : Card?
     var selectedImageView : Int?
     var board = Board()
@@ -49,6 +57,10 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
                 break
             case cardButton2 : selectedImageView = 2
                 break
+                
+            case cardButton1Player2 : selectedImageView = 3
+                break
+            case cardButton2Player2 : selectedImageView = 4
                 
             default :
                 break
@@ -103,6 +115,12 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         }else if selectedImageView == 2 {
         
             card2.image = selectedCard!.image
+        }else if selectedImageView == 3{
+        
+            card3.image = selectedCard!.image
+        }else if selectedImageView == 4 {
+        
+            card4.image = selectedCard!.image
         }
         
                 validationPicker.hidden = false
