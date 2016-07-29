@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewDelegate {
+internal class BoardViewController : UIViewController , UIPickerViewDataSource , UIPickerViewDelegate {
     
     //Cache le clavier lorsque l'utilisateur touche l'écran
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -44,13 +44,15 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
         pickerVal = ["As", "2","3","4","5","6","7","8","9","10","J","Q","K"]
         pickerSuit = ["Spade","Heart","Diamond","Club"]
         validationPicker.hidden = true
-        board.players = [Player()]
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
     }
     
     @IBAction func showPickerView ( sender : UIButton )
     {
         picker.hidden = false
-       // if let player = board.players?.first{
         
             switch sender {
             case cardButton : selectedImageView = 1
@@ -65,7 +67,6 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
             default :
                 break
             }
-       // }
         
     
     }
@@ -103,11 +104,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
                 let value = pickerView.selectedRowInComponent(1) + 1
                 selectedCard = Card(value: value, suit: Suit(rawValue: suit)!)
         
-        /*if let imageView = imageViewForCard(selectedCard!){
-        
-        imageView.image = selectedCard!.image
-         
-        }*/
+
         
         if selectedImageView == 1 {
             card1.image = selectedCard!.image
@@ -129,7 +126,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
    
     // permet de savoir quel bouton a été appuyé
     // a update pour 2eme joueurs 
-    func imageViewForCard ( card : Card ) -> UIImageView?{
+  /*  func imageViewForCard ( card : Card ) -> UIImageView?{
         
         if let player = board.players?.first{
            
@@ -142,7 +139,7 @@ internal class Scene : UIViewController , UIPickerViewDataSource , UIPickerViewD
             }
           }
         return nil
-        }
+        }*/
     
     
     

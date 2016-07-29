@@ -41,7 +41,7 @@
                                 <rect key="frame" x="254" y="372" width="47" height="30"/>
                                 <state key="normal" title="Valider"/>
                                 <connections>
-                                    <segue destination="SFb-ek-v9N" kind="presentation" id="4Ko-Rm-OKy"/>
+                                    <segue destination="SFb-ek-v9N" kind="presentation" identifier="toBoard" id="4Ko-Rm-OKy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="175" y="414"/>
         </scene>
-        <!--Scene -->
+        <!--BoardViewController-->
         <scene sceneID="PE6-iI-IPk">
             <objects>
-                <viewController title="Scene " modalTransitionStyle="flipHorizontal" id="SFb-ek-v9N" customClass="Scene" customModule="Poker_Stats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BoardViewController" modalTransitionStyle="flipHorizontal" id="SFb-ek-v9N" customClass="BoardViewController" customModule="Poker_Stats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tId-Po-hDi"/>
                         <viewControllerLayoutGuide type="bottom" id="Ld0-AH-rdj"/>

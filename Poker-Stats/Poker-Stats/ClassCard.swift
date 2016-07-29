@@ -47,13 +47,16 @@ struct Player {
 
 // structure d'un Flop/Turn/River
 struct Board   {
-   
-    var players = [Player]() //tableau du nombre de joueur avec leur carte 
+
+    var players : [Player]?
     var flop1 : Card?
     var flop2 : Card?
     var flop3 : Card?
     var turn : Card?
     var river : Card?
+    
+
+    
 }
 
 
