@@ -17,12 +17,23 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
     
     @IBOutlet weak var validationPicker: UIButton!
     
+    @IBOutlet weak var player3: UILabel!
+    @IBOutlet weak var player4: UILabel!
+    @IBOutlet weak var player5: UILabel!
+    @IBOutlet weak var player6: UILabel!
+    
     @IBOutlet weak var cardButton: UIButton!
     @IBOutlet weak var cardButton2: UIButton!
     @IBOutlet weak var cardButton1Player2: UIButton!
     @IBOutlet weak var cardButton2Player2: UIButton!
     @IBOutlet weak var cardButton1Player3: UIButton!
     @IBOutlet weak var cardButton2Player3: UIButton!
+    @IBOutlet weak var cardButton1Player4: UIButton!
+    @IBOutlet weak var cardButton2Player4: UIButton!
+    @IBOutlet weak var cardButton1Player5: UIButton!
+    @IBOutlet weak var cardButton2Player5: UIButton!
+    @IBOutlet weak var cardButton1Player6: UIButton!
+    @IBOutlet weak var cardButton2Player6: UIButton!
     
     @IBOutlet weak var picker: UIPickerView!
    
@@ -32,6 +43,12 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
     @IBOutlet weak var card4: UIImageView!
     @IBOutlet weak var card5: UIImageView!
     @IBOutlet weak var card6: UIImageView!
+    @IBOutlet weak var card7: UIImageView!
+    @IBOutlet weak var card8: UIImageView!
+    @IBOutlet weak var card9: UIImageView!
+    @IBOutlet weak var card10: UIImageView!
+    @IBOutlet weak var card11: UIImageView!
+    @IBOutlet weak var card12: UIImageView!
     
     var selectedCard : Card?
     var selectedImageView : Int?
@@ -48,6 +65,70 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
         pickerVal = ["As", "2","3","4","5","6","7","8","9","10","J","Q","K"]
         pickerSuit = ["Spade","Heart","Diamond","Club"]
         validationPicker.hidden = true
+        var nbOfPlayer : Int
+        nbOfPlayer = (board.players?.count)!
+        
+        switch nbOfPlayer {
+        case 2 :player3.hidden = true
+                player4.hidden = true
+                player5.hidden = true
+                player6.hidden = true
+                cardButton1Player3.hidden = true
+                 card5.hidden = true
+                 cardButton2Player3.hidden = true
+                 card6.hidden = true
+                 player3.hidden = true
+                 cardButton1Player4.hidden = true
+                 card7.hidden = true
+                 cardButton2Player4.hidden = true
+                 card8.hidden = true
+                 cardButton1Player5.hidden = true
+                 card9.hidden = true
+                 cardButton2Player5.hidden = true
+                 card10.hidden = true
+                 cardButton1Player6.hidden = true
+                 card11.hidden = true
+                 cardButton2Player6.hidden = true
+                 card12.hidden = true
+                 break
+       
+        case 3 :    player4.hidden = true
+                    player5.hidden = true
+                    player6.hidden = true
+                    cardButton1Player4.hidden = true
+                    card7.hidden = true
+                    cardButton2Player4.hidden = true
+                    card8.hidden = true
+                    cardButton1Player5.hidden = true
+                    card9.hidden = true
+                    cardButton2Player5.hidden = true
+                    card10.hidden = true
+                    cardButton1Player6.hidden = true
+                    card11.hidden = true
+                    cardButton2Player6.hidden = true
+                    card12.hidden = true
+            break
+        case 4 :    player5.hidden = true
+                    player6.hidden = true
+                    cardButton1Player5.hidden = true
+                    card9.hidden = true
+                    cardButton2Player5.hidden = true
+                    card10.hidden = true
+                    cardButton1Player6.hidden = true
+                    card11.hidden = true
+                    cardButton2Player6.hidden = true
+                    card12.hidden = true
+                    break
+        case 5 :    player6.hidden = true
+                    cardButton1Player6.hidden = true
+                    card11.hidden = true
+                    cardButton2Player6.hidden = true
+                    card12.hidden = true
+           
+        default :
+            break
+        
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -72,7 +153,18 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
                 break
             case cardButton2Player3 : selectedImageView = 6
                 break
-                
+            case cardButton1Player4 : selectedImageView = 7
+                break
+            case cardButton2Player4 : selectedImageView = 8
+                break
+            case cardButton1Player5 : selectedImageView = 9
+                break
+            case cardButton2Player5 : selectedImageView = 10
+                break
+            case cardButton1Player6 : selectedImageView = 11
+                break
+            case cardButton2Player6 : selectedImageView = 12
+                break
             default :
                 break
             }
@@ -127,8 +219,20 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
             card5.image = selectedCard!.image
         }else if selectedImageView == 6 {
             card6.image = selectedCard!.image
+        }else if selectedImageView == 7 {
+            card7.image = selectedCard!.image
+        }else if selectedImageView == 8 {
+            card8.image = selectedCard!.image
+        }else if selectedImageView == 9 {
+            card9.image = selectedCard!.image
+        }else if selectedImageView == 10 {
+            card10.image = selectedCard!.image
+        }else if selectedImageView == 11 {
+            card11.image = selectedCard!.image
+        }else if selectedImageView == 12 {
+            card12.image = selectedCard!.image
         }
-        
+
                 validationPicker.hidden = false
     }// end of did select
     
