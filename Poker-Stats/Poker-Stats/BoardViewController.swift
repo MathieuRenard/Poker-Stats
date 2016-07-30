@@ -21,6 +21,8 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
     @IBOutlet weak var cardButton2: UIButton!
     @IBOutlet weak var cardButton1Player2: UIButton!
     @IBOutlet weak var cardButton2Player2: UIButton!
+    @IBOutlet weak var cardButton1Player3: UIButton!
+    @IBOutlet weak var cardButton2Player3: UIButton!
     
     @IBOutlet weak var picker: UIPickerView!
    
@@ -28,6 +30,8 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
     @IBOutlet weak var card2: UIImageView!
     @IBOutlet weak var card3: UIImageView!
     @IBOutlet weak var card4: UIImageView!
+    @IBOutlet weak var card5: UIImageView!
+    @IBOutlet weak var card6: UIImageView!
     
     var selectedCard : Card?
     var selectedImageView : Int?
@@ -63,6 +67,11 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
             case cardButton1Player2 : selectedImageView = 3
                 break
             case cardButton2Player2 : selectedImageView = 4
+                break
+            case cardButton1Player3 : selectedImageView = 5
+                break
+            case cardButton2Player3 : selectedImageView = 6
+                break
                 
             default :
                 break
@@ -108,16 +117,16 @@ internal class BoardViewController : UIViewController , UIPickerViewDataSource ,
         
         if selectedImageView == 1 {
             card1.image = selectedCard!.image
-            
         }else if selectedImageView == 2 {
-        
             card2.image = selectedCard!.image
         }else if selectedImageView == 3{
-        
             card3.image = selectedCard!.image
         }else if selectedImageView == 4 {
-        
             card4.image = selectedCard!.image
+        }else if selectedImageView == 5 {
+            card5.image = selectedCard!.image
+        }else if selectedImageView == 6 {
+            card6.image = selectedCard!.image
         }
         
                 validationPicker.hidden = false
