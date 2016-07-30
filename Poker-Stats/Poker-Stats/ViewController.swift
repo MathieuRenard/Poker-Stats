@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var playerNumber : UITextField!
     @IBOutlet var validationButton : UIButton!
+    var selectedNumberOfPlayers = 0
 
     
     override func viewDidLoad() {
@@ -38,6 +39,8 @@ class ViewController: UIViewController {
         let playerNumber = Int(sender.text!)
         if playerNumber < 7 && playerNumber > 1 {
                 validationButton.hidden = false
+                selectedNumberOfPlayers = playerNumber!
+            
         } else if sender.text == ""{
              validationButton.hidden = true
         } else {
@@ -47,7 +50,26 @@ class ViewController: UIViewController {
       
     }
     
+    // permet d'incrémenter l'array de player
+    func arrayOfPlayerWithCount(count: Int)->[Player]{
+        var players = [Player]()
+        for _ in 1 ... count{
+            players.append(Player())
+        }
+        return players
+    }
     
+    // permet d'envoyer l array de player a BoardViewController
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "toBoard" {
+        if let destinationViewController = segue.destinationViewController as? BoardViewController{
+            let players = arrayOfPlayerWithCount(selectedNumberOfPlayers)
+            destinationViewController.board.players = players
+        }
+    }
+    
+    
+    }
     
 }
 

@@ -41,7 +41,7 @@
                                 <rect key="frame" x="254" y="372" width="47" height="30"/>
                                 <state key="normal" title="Valider"/>
                                 <connections>
-                                    <segue destination="SFb-ek-v9N" kind="presentation" id="4Ko-Rm-OKy"/>
+                                    <segue destination="SFb-ek-v9N" kind="presentation" identifier="toBoard" id="4Ko-Rm-OKy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="175" y="414"/>
         </scene>
-        <!--Scene -->
+        <!--BoardViewController-->
         <scene sceneID="PE6-iI-IPk">
             <objects>
-                <viewController title="Scene " modalTransitionStyle="flipHorizontal" id="SFb-ek-v9N" customClass="Scene" customModule="Poker_Stats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BoardViewController" modalTransitionStyle="flipHorizontal" id="SFb-ek-v9N" customClass="BoardViewController" customModule="Poker_Stats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tId-Po-hDi"/>
                         <viewControllerLayoutGuide type="bottom" id="Ld0-AH-rdj"/>
@@ -75,55 +75,251 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="Ah7-4h-1Lc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sélectioner les cartes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJf-qC-dXS">
-                                <rect key="frame" x="196" y="40" width="185" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcZ-hd-AIg">
-                                <rect key="frame" x="26" y="152" width="36" height="30"/>
-                                <state key="normal" title="carte"/>
+                                <rect key="frame" x="34" y="152" width="36" height="30"/>
+                                <state key="normal" title="carte">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="dXc-Uf-DKE"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQl-xG-HIj">
-                                <rect key="frame" x="69" y="392" width="249" height="87"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="SFb-ek-v9N" id="H8j-6q-BAb"/>
-                                    <outlet property="delegate" destination="SFb-ek-v9N" id="2DA-VT-osp"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l08-wA-JGn">
-                                <rect key="frame" x="134" y="159" width="47" height="30"/>
+                                <rect key="frame" x="306" y="395" width="47" height="30"/>
                                 <state key="normal" title="Valider"/>
                                 <connections>
                                     <action selector="hidePickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="dG4-oD-ZpW"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kng-rK-4Oi">
-                                <rect key="frame" x="76" y="145" width="33" height="44"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2D-LU-GiX">
-                                <rect key="frame" x="76" y="149" width="31" height="36"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="94" y="143" width="33" height="36"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="sYV-Qb-CGk"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0g-91-YJi">
-                                <rect key="frame" x="28" y="145" width="32" height="44"/>
+                                <rect key="frame" x="38" y="142" width="32" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQl-xG-HIj">
+                                <rect key="frame" x="20" y="366" width="249" height="87"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SFb-ek-v9N" id="H8j-6q-BAb"/>
+                                    <outlet property="delegate" destination="SFb-ek-v9N" id="2DA-VT-osp"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="joueur1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-pT-bNc">
+                                <rect key="frame" x="62" y="107" width="42" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Joueur2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc6-ai-wDD">
+                                <rect key="frame" x="199" y="104" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-2q-odW">
+                                <rect key="frame" x="179" y="143" width="33" height="43"/>
+                                <state key="normal" title="BJ2C1">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="dan-Rx-k6X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICf-nQ-Fep">
+                                <rect key="frame" x="233" y="142" width="26" height="41"/>
+                                <state key="normal" title="BJ2C2">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="1KH-c4-t9J"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-SY-u6d">
+                                <rect key="frame" x="230" y="142" width="32" height="45"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sélectioner les cartes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJf-qC-dXS">
+                                <rect key="frame" x="84" y="50" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Joueur3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNC-fZ-xXL">
+                                <rect key="frame" x="324" y="104" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-Vo-8zZ">
+                                <rect key="frame" x="307" y="142" width="31" height="43"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="wMt-zn-adg"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0G-eO-nv3">
+                                <rect key="frame" x="353" y="140" width="32" height="49"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZGL-d0-Bne">
+                                <rect key="frame" x="306" y="142" width="32" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4M-tc-3p3">
+                                <rect key="frame" x="179" y="143" width="33" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bju-mq-CaA">
+                                <rect key="frame" x="353" y="145" width="30" height="41"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="E0l-K9-e7z"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kng-rK-4Oi">
+                                <rect key="frame" x="94" y="142" width="33" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="joueur4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-nJ-Rkd">
+                                <rect key="frame" x="61" y="205" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="joueur5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CL5-Sc-iZu">
+                                <rect key="frame" x="200" y="205" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="joueur6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yI-co-d4h">
+                                <rect key="frame" x="324" y="205" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pyH-2V-BTI">
+                                <rect key="frame" x="38" y="240" width="32" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ep-4X-UNz">
+                                <rect key="frame" x="94" y="240" width="32" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epT-f5-Yuu">
+                                <rect key="frame" x="179" y="240" width="32" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rXC-Lc-FLi">
+                                <rect key="frame" x="230" y="240" width="32" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oCY-RR-Znc">
+                                <rect key="frame" x="306" y="240" width="32" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4d1-ae-Ajy">
+                                <rect key="frame" x="353" y="240" width="32" height="47"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQq-2M-ZPw">
+                                <rect key="frame" x="94" y="240" width="32" height="47"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchDragInside" id="eZh-nM-8eU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCY-Po-4qM">
+                                <rect key="frame" x="179" y="240" width="32" height="47"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="tSy-qX-7py"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3y-ef-K8i">
+                                <rect key="frame" x="230" y="240" width="32" height="47"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="6Yu-o1-PO3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wf4-LH-a6S">
+                                <rect key="frame" x="306" y="240" width="32" height="47"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="IQ4-ie-9s9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIb-U5-73s">
+                                <rect key="frame" x="352" y="240" width="32" height="47"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="WCG-sg-yht"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hds-bU-psd">
+                                <rect key="frame" x="38" y="240" width="32" height="47"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPickerView:" destination="SFb-ek-v9N" eventType="touchUpInside" id="yeW-KG-7x6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="card1" destination="g0g-91-YJi" id="8Ad-oF-6Pw"/>
+                        <outlet property="card10" destination="rXC-Lc-FLi" id="nRs-Gu-uKg"/>
+                        <outlet property="card11" destination="oCY-RR-Znc" id="PS9-1x-NWe"/>
+                        <outlet property="card12" destination="4d1-ae-Ajy" id="tyk-Bd-ren"/>
                         <outlet property="card2" destination="kng-rK-4Oi" id="oV4-XQ-a62"/>
+                        <outlet property="card3" destination="K4M-tc-3p3" id="h9e-ef-D9h"/>
+                        <outlet property="card4" destination="zYW-SY-u6d" id="ryq-h7-Tsx"/>
+                        <outlet property="card5" destination="ZGL-d0-Bne" id="s4p-BL-KKR"/>
+                        <outlet property="card6" destination="t0G-eO-nv3" id="WNY-Gj-bTu"/>
+                        <outlet property="card7" destination="pyH-2V-BTI" id="AxG-oH-CKZ"/>
+                        <outlet property="card8" destination="6Ep-4X-UNz" id="O3K-gd-vd6"/>
+                        <outlet property="card9" destination="epT-f5-Yuu" id="eld-vt-Zuf"/>
                         <outlet property="cardButton" destination="HcZ-hd-AIg" id="WeL-jv-zIq"/>
+                        <outlet property="cardButton1Player2" destination="8sS-2q-odW" id="ofG-lw-LfU"/>
+                        <outlet property="cardButton1Player3" destination="Odz-Vo-8zZ" id="azS-OI-9fU"/>
+                        <outlet property="cardButton1Player4" destination="hds-bU-psd" id="2Rd-SO-UtP"/>
+                        <outlet property="cardButton1Player5" destination="WCY-Po-4qM" id="bhf-Zt-Qcr"/>
+                        <outlet property="cardButton1Player6" destination="wf4-LH-a6S" id="Vja-8T-B8G"/>
                         <outlet property="cardButton2" destination="C2D-LU-GiX" id="RG1-uq-9rV"/>
+                        <outlet property="cardButton2Player2" destination="ICf-nQ-Fep" id="xqx-18-Nsj"/>
+                        <outlet property="cardButton2Player3" destination="bju-mq-CaA" id="VWf-tS-FOO"/>
+                        <outlet property="cardButton2Player4" destination="PQq-2M-ZPw" id="4e8-Rc-aGY"/>
+                        <outlet property="cardButton2Player5" destination="s3y-ef-K8i" id="bF1-Gr-1Ty"/>
+                        <outlet property="cardButton2Player6" destination="nIb-U5-73s" id="eET-rb-hOf"/>
                         <outlet property="picker" destination="SQl-xG-HIj" id="TWb-Jd-i28"/>
+                        <outlet property="player3" destination="yNC-fZ-xXL" id="wcf-mH-Glr"/>
+                        <outlet property="player4" destination="v4H-nJ-Rkd" id="HUB-7v-Qw6"/>
+                        <outlet property="player5" destination="CL5-Sc-iZu" id="lMo-iP-U2M"/>
+                        <outlet property="player6" destination="2yI-co-d4h" id="4Ea-c6-JPJ"/>
                         <outlet property="validationPicker" destination="l08-wA-JGn" id="4Le-lA-yBZ"/>
                     </connections>
                 </viewController>

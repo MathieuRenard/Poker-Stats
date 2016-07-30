@@ -18,35 +18,45 @@ enum Suit : Int  {
 }
 
 // structure d'une Card
-struct Card : CustomStringConvertible {
+class Card : NSObject {
     var value : Int
     var suit : Suit
     
-    var image : UIImage?{
+    required init(value: Int, suit: Suit) {
+                self.value = value
+                self.suit = suit
+                super.init()
+    }
     
+    override var description: String {
+        return "Card:\(value)-\(suit)"
+    }
+    
+    var image : UIImage?{
         return UIImage(named: String(format: "%i_%i", value, suit.rawValue))
     }
     
-    var description: String{
-    return "Card:\(value)-\(suit)"
-    }
+
 }
-
-
-// structure d'un Flop/Turn/River
-struct Board   {
-   
-    var players: [Player]?
-    var flop1 : Card?
-    var flop2 : Card?
-    var flop3 : Card?
-    var turn : Card?
-    var river : Card?
-}
-
 
 //structure player
 struct Player {
     var card1 : Card?
     var card2 : Card?
 }
+
+// structure d'un Flop/Turn/River
+struct Board   {
+
+    var players : [Player]?
+    var flop1 : Card?
+    var flop2 : Card?
+    var flop3 : Card?
+    var turn : Card?
+    var river : Card?
+    
+
+    
+}
+
+
